@@ -1,6 +1,6 @@
-#呼吸灯
+# 呼吸灯
 ***
-##设计思路与原理
+## 设计思路与原理
 ```
 呼吸灯是采用PWM的方式，在固定频率下，通过调整占空比的方式来控制LED的亮度变化
 LED的亮度由通过LED的电流量决定
@@ -8,7 +8,7 @@ PWM pulse width modulation 脉冲宽度调制
 设计在计数器周期下 占空比由0%到100%变化 可递增可递减
 ```
 ***
-##设计过程
+## 设计过程
 
 **新建工程**
 板子型号*xc7z020clg400-2*
@@ -29,7 +29,7 @@ generate bitstream生成bit流文件
 open hardware manager自动连接开发板
 program device下载
 ***
-##代码实现
+## 代码实现
 `breathled2.v`
 ```
 `timescale 1ns / 1ps
@@ -86,12 +86,12 @@ set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports sys_rst_n]
 set_property -dict {PACKAGE_PIN J16 IOSTANDARD LVCMOS33} [get_ports led]
 ```
 ***
-##实验验证
+## 实验验证
 ```
 连接开发板 上电下载bit流文件 正常控制LED灯显示呼吸灯效果
 ```
 ***
-##存在问题与解决方案
+## 存在问题与解决方案
 ```
 JTAG接口连接不稳定 USB接口松动问题：更换接口或者数据线重新连接
 约束文件注意约束电平和管脚匹配：查表
