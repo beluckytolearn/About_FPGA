@@ -8,30 +8,29 @@ PWM pulse width modulation 脉冲宽度调制
 设计在计数器周期下 占空比由0%到100%变化 可递增可递减
 ```
 ***
-## 设计过程
-
-**新建工程**
-板子型号*xc7z020clg400-2*
-**设计输入**
-sys_clk *系统时钟输入* 16位
-sys_rst_n *系统复位输入*16位
-led *LED灯输出*
-**分析综合**
-open elaborated design分析
-run synthesis综合
-**约束输入**
-添加约束文件
-时序约束 管脚约束
-**设计实现**
+## 设计过程  
+**新建工程**  
+板子型号*xc7z020clg400-2*  
+**设计输入**  
+sys_clk *系统时钟输入* 16位  
+sys_rst_n *系统复位输入*16位  
+led *LED灯输出*  
+**分析综合**  
+open elaborated design分析  
+run synthesis综合  
+**约束输入**  
+添加约束文件  
+时序约束 管脚约束  
+**设计实现**  
 run implementation设计
-**生产和下载比特流文件**
-generate bitstream生成bit流文件
-open hardware manager自动连接开发板
+**生产和下载比特流文件**  
+generate bitstream生成bit流文件  
+open hardware manager自动连接开发板  
 program device下载
 ***
-## 代码实现
+## 代码实现  
 `breathled2.v`
-```
+```  
 `timescale 1ns / 1ps
 //
 module breathled2(
@@ -78,8 +77,8 @@ always @(posedge sys_clk or negedge sys_rst_n)begin
     end
 end
 endmodule
-```
-`breathled2.xdc`
+```  
+`breathled2.xdc`  
 ```
 set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports sys_clk]
 set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports sys_rst_n]
