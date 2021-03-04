@@ -8,10 +8,10 @@ PWM pulse width modulation 脉冲宽度调制
 设计在计数器周期下 占空比由0%到100%变化 可递增可递减
 ```
 ***
-## 设计过程  
-**新建工程**  
-板子型号*xc7z020clg400-2*  
-**设计输入**  
+## 设计过程   
+**新建工程**   
+板子型号*xc7z020clg400-2*    
+**设计输入输出**  
 sys_clk *系统时钟输入* 16位  
 sys_rst_n *系统复位输入*16位  
 led *LED灯输出*  
@@ -22,11 +22,11 @@ run synthesis综合
 添加约束文件  
 时序约束 管脚约束  
 **设计实现**  
-run implementation设计
+run implementation设计  
 **生产和下载比特流文件**  
-generate bitstream生成bit流文件  
-open hardware manager自动连接开发板  
-program device下载
+generate bitstream生成bit流文件   
+open hardware manager自动连接开发板    
+program device下载   
 ***
 ## 代码实现  
 `breathled2.v`
@@ -91,8 +91,8 @@ set_property -dict {PACKAGE_PIN J16 IOSTANDARD LVCMOS33} [get_ports led]
 ```
 ***
 ## 存在问题与解决方案
-```
-JTAG接口连接不稳定 USB接口松动问题：更换接口或者数据线重新连接
-约束文件注意约束电平和管脚匹配：查表
+``` 
+JTAG接口连接不稳定 USB接口松动问题：更换接口或者数据线重新连接  
+约束文件注意约束电平和管脚匹配：查表  
 ```
 ***
